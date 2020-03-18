@@ -1,0 +1,14 @@
+#nav {
+    background-color: red;
+    height: 50px;
+}
+
+#container {
+    background-color: grey;
+    height: 400px;
+}
+
+#footer {
+    background-color: black;
+    height: 100px;
+}
