@@ -1,14 +1,26 @@
-#nav {
-    background-color: red;
-    height: 50px;
+#mainCarousel {
+    max-width: 700px;
 }
 
 #container {
     background-color: grey;
-    height: 400px;
+    max-height: 600px;
 }
 
 #footer {
     background-color: black;
-    height: 100px;
+    height: 50px;
+}
+
+html {
+    background-color: black;
+}
+
+body {
+    background-color: black;
+}
+
+#footerText {
+    color: grey;
+    font-size: 12px;
 }
