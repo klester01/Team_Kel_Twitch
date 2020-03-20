@@ -1,10 +1,30 @@
-#mainCarousel {
-    max-width: 700px;
-}
+
 
 #container {
-    background-color: grey;
+    background-color: black;
     max-height: 600px;
+    margin: auto;
+}
+
+h5 {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 20px;
+    color: green;
+    margin: 5px 0 0 20px;
+    font-weight: bold;
+}
+
+.card {
+	background-color: rgba(255, 255, 255, .8);
+}
+
+#gameImg {
+    max-width: 200px;
+    margin: auto;
 }
 
 #footer {

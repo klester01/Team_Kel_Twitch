@@ -41,8 +41,8 @@
           </nav>
 <!--This will hold the top 10 users we want to display-->
 <!--TESTING OUT OPTIONS, BELOW IS CAROUSEL, NOT FINAL-->
-        <div id="container">
-          <div id="testData"></div>
+        <div id="carouselContainer" class="col col-md-10 offset-md-1 col-lg-7 offset-lg-2">
+          <!-- <div id="testData"></div> -->
             <div id="mainCarousel" class="carousel slide bg-dark mx-auto" data-ride="carousel">
                 <ol class="carousel-indicators">
                   <li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
@@ -51,6 +51,10 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
+      <!-- Placeholder for testing video -->
+                        <!-- <div class="embed-responsive embed-responsive-16by9">
+                          <iframe class="embed-responsive-item" src="https://youtu.be/u8IsIboxCRs" allowfullscreen></iframe>
+                      </div> -->
                         <img class="img d-block w-100" src="https://cdn.shopify.com/s/files/1/0095/4332/files/Screen_Shot_2018-02-21_at_10.43.11_AM_1024x1024.png?v=1519258577" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                           <h5>...</h5>
@@ -83,55 +87,16 @@
               </div>
         </div>
 <!--TESTING OUT OPTIONS, BELOW IS CARDS, NOT FINAL--> 
-  <div id="container">
-    <div class="row">
-      <div class="col-sm-6 d-flex">
-          <div id="gameCard">
+<hr>
+<div id="container">
+  <h2 class="text-center">Top Games Today:</h2>
+    <div class="ml-5">
+        <div id="gameCard" class="row mx-auto">
               <!-- Individual games go here -->
           </div>
         </div>
-<<<<<<< HEAD
     </div>
   </div>
-=======
-        <div class="card mx-2 my-5">
-            <img id="gamerImg" class="card-img-top" src="https://www.net-aware.org.uk/siteassets/images-and-icons/application-icons/app-icons-twitch.png?w=585&scale=down">
-                <div class="card-body d-flex flex-column">
-                    <h5 id="gamerUsername" class="card-title d-flex flex-column">Username</h5>
-                    <span id="gamerViews" class="date badge badge-dark">Views</span>
-                    <span id="gamerDescription">A little about the user</span>
-                    <a href="https://www.google.com/" id="gamerProfile" class="stretched-link">Go to Profile</a>
-                </div>
-        </div>
-        <div class="card mx-2 my-5">
-            <img id="gamerImg" class="card-img-top" src="https://www.net-aware.org.uk/siteassets/images-and-icons/application-icons/app-icons-twitch.png?w=585&scale=down">
-                <div class="card-body d-flex flex-column">
-                    <h5 id="gamerUsername" class="card-title d-flex flex-column">Username</h5>
-                    <span id="gamerViews" class="date badge badge-dark">Views</span>
-                    <span id="gamerDescription">A little about the user</span>
-                    <a href="#" id="gamerProfile" class="stretched-link">Go to Profile</a>
-                </div>
-        </div>
-        <div class="card mx-2 my-5">
-            <img id="gamerImg" class="card-img-top" src="https://www.net-aware.org.uk/siteassets/images-and-icons/application-icons/app-icons-twitch.png?w=585&scale=down">
-                <div class="card-body d-flex flex-column">
-                    <h5 id="gamerUsername" class="card-title d-flex flex-column">Username</h5>
-                    <span id="gamerViews" class="date badge badge-dark">Views</span>
-                    <span id="gamerDescription">A little about the user</span>
-                    <a href="#" id="gamerProfile" class="stretched-link">Go to Profile</a>
-                </div>
-        </div>
-        <div class="card mx-2 my-5">
-            <img id="gamerImg" class="card-img-top" src="https://www.net-aware.org.uk/siteassets/images-and-icons/application-icons/app-icons-twitch.png?w=585&scale=down">
-                <div class="card-body d-flex flex-column">
-                    <h5 id="gamerUsername" class="card-title d-flex flex-column">Username</h5>
-                    <span id="gamerViews" class="date badge badge-dark">Views</span>
-                    <span id="gamerDescription">A little about the user</span>
-                    <a href="#" id="gamerProfile" class="stretched-link">Go to Profile</a>
-                </div>
-        </div>
-
->>>>>>> 321be3f910e457b765f6cbd0bd5190fb64800a02
     <!--This is for the footer and copyright info-->
     <div id="footer">
         <p id="footerText" class="text-center"> &copy; Copyright Team Kel 2020</p>
@@ -141,18 +106,10 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<<<<<<< HEAD
         <!-- These are the Axios Scripts -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!--I put the script pages at the bottom so they run correctly-->
     <script src="search.js"></script>
     <script src="index.js"></script>
-    <script src="main.js"></script>
-=======
-
-    <!--I put the script pages at the bottom so they run correctly-->
-    <script src="search.js"></script>
-    <script src="index.js"></script>
->>>>>>> 321be3f910e457b765f6cbd0bd5190fb64800a02
 </body>
 </html>
