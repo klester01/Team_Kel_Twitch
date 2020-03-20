@@ -1,16 +1,78 @@
+<<<<<<< HEAD
+=======
 // this should populate the container with the top 10 streams
 
+>>>>>>> 321be3f910e457b765f6cbd0bd5190fb64800a02
 // axios.defaults.headers.common['Authorization'] = store.getState 
 
 const headers = {
     'Accept': 'application/vnd.twitchtv.v5+json',
     'Client-ID': '8h3jv4wh2mbm329j2q50djovs9w00v'
+<<<<<<< HEAD
+};
+
+// Populate the container with the top 10 streams. For some reason, they are coming in vertically and not horizontally.
+function renderGames(gameInfo) {
+    // console.log(gameInfo); 
+    let renderInfo = gameInfo.data.top.map(topGame => {
+        // console.log(topGame); 
+        // console.log(topGame.game.box.medium) 
+        return`
+            <div class="card mx-2 my-5">
+                <div class="card-body">
+                    <h5 id="gameName" class="card-title d-flex flex-column text-center">${topGame.game.name}</h5>
+                    <img class="img d-block w-100" src="${topGame.game.box.medium}" alt="...">
+                    <span id="gameViewers" class="date badge badge-dark">${topGame.viewers} current viewers</span> 
+                    <span id="gameViewers" class="date badge badge-dark">${topGame.channels} current streamers</span> 
+                </div>
+            </div>
+        `
+    })
+    return renderInfo.join('');
+};
+
+
+// Main function to bring in the top-10 games object.
+axios.get('https://api.twitch.tv/kraken/games/top', {headers}) 
+.then(function (response) {
+    document.getElementById('gameCard').innerHTML = renderGames(response);
+    // console.log(response.data); 
+    // console.log(response.data.top[0].game.name); 
+})
+
+
+// everything below this is old code
+// axios.get('https://api.twitch.tv/kraken/games/top', {headers}) 
+// .then(function getTopGame(response) {
+
+//     var content = document.getElementById('content');
+//     content.innerHTML = renderGames(response);
+
+//     // console.log(response.data); 
+//     // console.log(response.data.top[0].game.name); 
+//     var topGames = response.data.top.map(topgame => {
+//         console.log(topgame);
+//         return `
+//         <div class="card mx-2 my-5">
+//             <img id="gamerImg" class="card-img-top" src="https://www.net-aware.org.uk/siteassets/images-and-icons/application-icons/app-icons-twitch.png?w=585&scale=down">
+//                 <div class="card-body d-flex flex-column">
+//                     <h5 id="gameName" class="card-title d-flex flex-column">${topgame}</h5>
+//                     <span id="gamerViews" class="date badge badge-dark">Views</span>
+//                     <span id="gamerDescription">A little about the user</span>
+//                     <a href="#" id="gamerProfile" class="stretched-link">Go to Profile</a>
+//                 </div>
+//         </div>
+//         `
+//     })
+//     return topGames;
+=======
 }
 
 axios.get('https://api.twitch.tv/kraken/games/top', {headers}) 
 .then(function (response) {
     console.log(response.data);
     console.log(response.data.top[0].game.name);
+>>>>>>> 321be3f910e457b765f6cbd0bd5190fb64800a02
     // var gameName = response.data.top[0].game.name; 
     // console.log(gameName); 
     // document.getElementById("card").innerHTML = gameName; 
@@ -25,6 +87,25 @@ axios.get('https://api.twitch.tv/kraken/games/top', {headers})
     //             </div>
     //     </div>
     // `
+<<<<<<< HEAD
+// })
+
+// This test function works and will create an access token. I need to clean this up so it's not hard-coded. See below. 
+// document.getElementById("test").addEventListener("click", function(){
+//     axios.post(
+//         'https://id.twitch.tv/oauth2/token?client_id=8h3jv4wh2mbm329j2q50djovs9w00v&client_secret=j051tnz5ka2kjjgcuhox8k04pdfu1w&grant_type=client_credentials')
+//         // {
+//         // client_id: '8h3jv4wh2mbm329j2q50djovs9w00v',
+//         // client_secret: 'j051tnz5ka2kjjgcuhox8k04pdfu1w',
+//         // redirect_uri: 'http://localhost',
+//         // grant_type: 'client_credentials'
+//         // }
+//         .then((response) => {
+//             console.log(response.data.access_token);
+//         }
+//     );
+// })
+=======
 })
 
 // This test function works and will create an access token. I need to clean this up so it's not hard-coded. See below. 
@@ -42,6 +123,7 @@ document.getElementById("test").addEventListener("click", function(){
         }
     );
 })
+>>>>>>> 321be3f910e457b765f6cbd0bd5190fb64800a02
 
 // document.getElementById("test").addEventListener("click", function(){
 //     axios.get(
@@ -83,6 +165,9 @@ document.getElementById("test").addEventListener("click", function(){
 //         //     grant_type: 'client_credentials'
 //         // }
 //     })
+<<<<<<< HEAD
+// })
+=======
 // })
 
 // make axios post with API key parameters to get access token?
@@ -97,3 +182,4 @@ document.getElementById("test").addEventListener("click", function(){
 
 
 // https://id.twitch.tv/oauth2/token?client_id=8h3jv4wh2mbm329j2q50djovs9w00v&client_secret=j051tnz5ka2kjjgcuhox8k04pdfu1w&grant_type=client_credentials 
+>>>>>>> 321be3f910e457b765f6cbd0bd5190fb64800a02
