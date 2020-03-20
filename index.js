@@ -1,14 +1,8 @@
-<<<<<<< HEAD
-=======
-// this should populate the container with the top 10 streams
-
->>>>>>> 321be3f910e457b765f6cbd0bd5190fb64800a02
 // axios.defaults.headers.common['Authorization'] = store.getState 
 
 const headers = {
     'Accept': 'application/vnd.twitchtv.v5+json',
     'Client-ID': '8h3jv4wh2mbm329j2q50djovs9w00v'
-<<<<<<< HEAD
 };
 
 // Populate the container with the top 10 streams. For some reason, they are coming in vertically and not horizontally.
@@ -18,12 +12,12 @@ function renderGames(gameInfo) {
         // console.log(topGame); 
         // console.log(topGame.game.box.medium) 
         return`
-            <div class="card mx-2 my-5">
+            <div class="card mx-2 my-3 col-lg-2 col-md-3 col-sm-4">
                 <div class="card-body">
                     <h5 id="gameName" class="card-title d-flex flex-column text-center">${topGame.game.name}</h5>
-                    <img class="img d-block w-100" src="${topGame.game.box.medium}" alt="...">
-                    <span id="gameViewers" class="date badge badge-dark">${topGame.viewers} current viewers</span> 
-                    <span id="gameViewers" class="date badge badge-dark">${topGame.channels} current streamers</span> 
+                    <img id="gameImg" class="card-img-top" src="${topGame.game.box.medium}" alt="...">
+                    <span id="gameViewers" class="date badge badge-danger">${topGame.viewers} watching</span> 
+                    <span id="gameViewers" class="date badge badge-dark">${topGame.channels} streaming</span>
                 </div>
             </div>
         `
@@ -39,7 +33,6 @@ axios.get('https://api.twitch.tv/kraken/games/top', {headers})
     // console.log(response.data); 
     // console.log(response.data.top[0].game.name); 
 })
-
 
 // everything below this is old code
 // axios.get('https://api.twitch.tv/kraken/games/top', {headers}) 
@@ -65,14 +58,6 @@ axios.get('https://api.twitch.tv/kraken/games/top', {headers})
 //         `
 //     })
 //     return topGames;
-=======
-}
-
-axios.get('https://api.twitch.tv/kraken/games/top', {headers}) 
-.then(function (response) {
-    console.log(response.data);
-    console.log(response.data.top[0].game.name);
->>>>>>> 321be3f910e457b765f6cbd0bd5190fb64800a02
     // var gameName = response.data.top[0].game.name; 
     // console.log(gameName); 
     // document.getElementById("card").innerHTML = gameName; 
@@ -87,7 +72,6 @@ axios.get('https://api.twitch.tv/kraken/games/top', {headers})
     //             </div>
     //     </div>
     // `
-<<<<<<< HEAD
 // })
 
 // This test function works and will create an access token. I need to clean this up so it's not hard-coded. See below. 
@@ -105,25 +89,6 @@ axios.get('https://api.twitch.tv/kraken/games/top', {headers})
 //         }
 //     );
 // })
-=======
-})
-
-// This test function works and will create an access token. I need to clean this up so it's not hard-coded. See below. 
-document.getElementById("test").addEventListener("click", function(){
-    axios.post(
-        'https://id.twitch.tv/oauth2/token?client_id=8h3jv4wh2mbm329j2q50djovs9w00v&client_secret=j051tnz5ka2kjjgcuhox8k04pdfu1w&grant_type=client_credentials')
-        // {
-        // client_id: '8h3jv4wh2mbm329j2q50djovs9w00v',
-        // client_secret: 'j051tnz5ka2kjjgcuhox8k04pdfu1w',
-        // redirect_uri: 'http://localhost',
-        // grant_type: 'client_credentials'
-        // }
-        .then((response) => {
-            console.log(response.data.access_token);
-        }
-    );
-})
->>>>>>> 321be3f910e457b765f6cbd0bd5190fb64800a02
 
 // document.getElementById("test").addEventListener("click", function(){
 //     axios.get(
@@ -165,21 +130,4 @@ document.getElementById("test").addEventListener("click", function(){
 //         //     grant_type: 'client_credentials'
 //         // }
 //     })
-<<<<<<< HEAD
 // })
-=======
-// })
-
-// make axios post with API key parameters to get access token?
-
-// retreive top-10 streams by viewer count
-
-
-// function topStreamers() {
-//     var topStreamer = document.getElementById("top10");
-
-// }
-
-
-// https://id.twitch.tv/oauth2/token?client_id=8h3jv4wh2mbm329j2q50djovs9w00v&client_secret=j051tnz5ka2kjjgcuhox8k04pdfu1w&grant_type=client_credentials 
->>>>>>> 321be3f910e457b765f6cbd0bd5190fb64800a02
