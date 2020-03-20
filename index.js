@@ -1,8 +1,14 @@
+<<<<<<< HEAD
+=======
+// this should populate the container with the top 10 streams
+
+>>>>>>> 321be3f910e457b765f6cbd0bd5190fb64800a02
 // axios.defaults.headers.common['Authorization'] = store.getState 
 
 const headers = {
     'Accept': 'application/vnd.twitchtv.v5+json',
     'Client-ID': '8h3jv4wh2mbm329j2q50djovs9w00v'
+<<<<<<< HEAD
 };
 
 // Populate the container with the top 10 streams. For some reason, they are coming in vertically and not horizontally.
@@ -59,6 +65,14 @@ axios.get('https://api.twitch.tv/kraken/games/top', {headers})
 //         `
 //     })
 //     return topGames;
+=======
+}
+
+axios.get('https://api.twitch.tv/kraken/games/top', {headers}) 
+.then(function (response) {
+    console.log(response.data);
+    console.log(response.data.top[0].game.name);
+>>>>>>> 321be3f910e457b765f6cbd0bd5190fb64800a02
     // var gameName = response.data.top[0].game.name; 
     // console.log(gameName); 
     // document.getElementById("card").innerHTML = gameName; 
@@ -73,6 +87,7 @@ axios.get('https://api.twitch.tv/kraken/games/top', {headers})
     //             </div>
     //     </div>
     // `
+<<<<<<< HEAD
 // })
 
 // This test function works and will create an access token. I need to clean this up so it's not hard-coded. See below. 
@@ -90,6 +105,25 @@ axios.get('https://api.twitch.tv/kraken/games/top', {headers})
 //         }
 //     );
 // })
+=======
+})
+
+// This test function works and will create an access token. I need to clean this up so it's not hard-coded. See below. 
+document.getElementById("test").addEventListener("click", function(){
+    axios.post(
+        'https://id.twitch.tv/oauth2/token?client_id=8h3jv4wh2mbm329j2q50djovs9w00v&client_secret=j051tnz5ka2kjjgcuhox8k04pdfu1w&grant_type=client_credentials')
+        // {
+        // client_id: '8h3jv4wh2mbm329j2q50djovs9w00v',
+        // client_secret: 'j051tnz5ka2kjjgcuhox8k04pdfu1w',
+        // redirect_uri: 'http://localhost',
+        // grant_type: 'client_credentials'
+        // }
+        .then((response) => {
+            console.log(response.data.access_token);
+        }
+    );
+})
+>>>>>>> 321be3f910e457b765f6cbd0bd5190fb64800a02
 
 // document.getElementById("test").addEventListener("click", function(){
 //     axios.get(
@@ -131,4 +165,21 @@ axios.get('https://api.twitch.tv/kraken/games/top', {headers})
 //         //     grant_type: 'client_credentials'
 //         // }
 //     })
+<<<<<<< HEAD
 // })
+=======
+// })
+
+// make axios post with API key parameters to get access token?
+
+// retreive top-10 streams by viewer count
+
+
+// function topStreamers() {
+//     var topStreamer = document.getElementById("top10");
+
+// }
+
+
+// https://id.twitch.tv/oauth2/token?client_id=8h3jv4wh2mbm329j2q50djovs9w00v&client_secret=j051tnz5ka2kjjgcuhox8k04pdfu1w&grant_type=client_credentials 
+>>>>>>> 321be3f910e457b765f6cbd0bd5190fb64800a02
