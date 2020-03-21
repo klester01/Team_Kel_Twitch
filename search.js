@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function renderSearch (twitchArray){
        var searchHTML = twitchArray.map(function (currentGame){
             return`
-            <div id="container" class="mx-auto d-flex card-deck">
+            <div id="Container" class="mx-auto d-flex card-deck">
                 <div class="card mx-2 my-5">
                      <img id="gamerImg" class="card-img-top" src="https://www.net-aware.org.uk/siteassets/images-and-icons/application-icons/app-icons-twitch.png?w=585&scale=down">
                         <div class="card-body d-flex flex-column">
