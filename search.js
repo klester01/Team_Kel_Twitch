@@ -20,25 +20,24 @@ document.addEventListener('DOMContentLoaded', function() {
        return searchHTML; 
     } 
     
-    var gamesContainer = document.getElementById("searchContainer");
-    document.getElementById('searchBar').addEventListener('submit', function(e){
-    e.preventDefault();
-        var searchString = document.getElementById('searchBar').value;
-        var urlEncodedSearchString = encodeURIComponent(searchString); 
-        axios.get("https://api.twitch.tv/kraken/search/games?query=" + urlEncodedSearchString).then(function(response){
-            var searchHTML = renderSearch(response.data.Search);
-            gamesContainer.innerHTML = searchHTML;
-            games = response.data.Search
-            console.log(response.data);
-        })
-    gamesContainer.innerHTML = renderSearch(gamesData);
-   }) 
-
-}); 
+//     var gamesContainer = document.getElementById("searchContainer");
+//     document.getElementById('searchBar').addEventListener('submit', function(e){
+//     e.preventDefault();
+//         var searchString = document.getElementById('searchBar').value;
+//         var urlEncodedSearchString = encodeURIComponent(searchString); 
+//         axios.get("https://api.twitch.tv/kraken/search/games?query=" + urlEncodedSearchString).then(function(response){
+//             var searchHTML = renderSearch(response.data.Search);
+//             gamesContainer.innerHTML = searchHTML;
+//             games = response.data.Search
+//             console.log(response.data);
+//         })
+//     gamesContainer.innerHTML = renderSearch(gamesData);
+//    }) 
 
 function fetchData(url) {
 	var headers = {
-        'Client-ID': 'ijvkrnnrg0v6xnph3mns3hoyn2ltnz',
+        'Client-ID': 'ijvkrnnrg0v6xnph3mns3hoyn2ltnz',  
+            
 	};
 	return axios.get(url, {
 		headers
@@ -47,11 +46,12 @@ function fetchData(url) {
 
 //for single URL searches
 // var test = fetchData('https://api.twitch.tv/helix/games?id=493057') 
-
 // console.log(test); 
-
-
 // for multiple URL searches
 const arrayOfSearch = [fetchData('https://api.twitch.tv/helix/games?id=493057'), fetchData('https://api.twitch.tv/helix/streams?top=10')]
 
 Promise.all(arrayOfSearch).then(console.log(arrayOfSearch));
+
+
+}); 
+
