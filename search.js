@@ -67,7 +67,7 @@ document.getElementById('search').addEventListener('submit', function(e){
         var urlEncodedSearchString = encodeURIComponent(searchString); 
         console.log(searchString)
 
-        axios.get(`https://api.twitch.tv/kraken/search/games?query=${urlEncodedSearchString}`, {headers})
+        axios.get(`https://api.twitch.tv/kraken/search/games?query=${urlEncodedSearchString}`, headersSearch)
             .then(function(response) {
                 console.log(response)
                 // var searchHTML = renderSearch(response.data.Search);
@@ -79,7 +79,7 @@ document.getElementById('search').addEventListener('submit', function(e){
    }) 
 
 
-var headers = {
+var headersSearch = {
     'Accept': 'application/vnd.twitchtv.v5+json',
     'Client-ID': '8h3jv4wh2mbm329j2q50djovs9w00v'  
 };
