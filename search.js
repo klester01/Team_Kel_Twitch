@@ -4,17 +4,13 @@ document.addEventListener('DOMContentLoaded', function() {
     function renderSearch (twitchArray){
        var searchHTML = twitchArray.map(function (currentGame){
             return`
-            <div id="Container" class="mx-auto d-flex card-deck">
-                <div class="card mx-2 my-5">
-                     <img id="gamerImg" class="card-img-top" src="https://www.net-aware.org.uk/siteassets/images-and-icons/application-icons/app-icons-twitch.png?w=585&scale=down">
-                        <div class="card-body d-flex flex-column">
-                            <h5 id="gamerUsername" class="card-title d-flex flex-column">${currentGame.user_name}</h5>
-                            <span id="gamerViews" class="date badge badge-dark">${currentGame.viewer_count}</span>
-                            <span id="gamerDescription">${currentGame.description}</span>
-                            <a href="https://www.twitch.tv/" id="gamerProfile" class="stretched-link">${currentGame.Go-to-Profile}</a>
-                        </div>
-                 </div>
-            </div>        
+        <div class="card mx-2 my-3 col-lg-2 col-md-3 col-sm-4">
+            <div class="card-body">
+                <h5 id="gameName" class="card-title d-flex flex-column text-center">${currentGame.user_name}</h5>
+                <img id="gameImg" class="card-img-top" src="" alt="...">
+                <span id="gameViewers" class="date badge badge-danger">${currentGame.viewers} watching</span> 
+                <span id="gameViewers" class="date badge badge-dark">${currentGame.channels} streaming</span>
+            </div>      
             `
        }).join(""); 
        return searchHTML; 
@@ -34,11 +30,16 @@ document.addEventListener('DOMContentLoaded', function() {
     gamesContainer.innerHTML = renderSearch(games);
    }) 
 
+   const arrayOfSearch = [fetchData('https://api.twitch.tv/helix/games?id=493057'), fetchData('https://api.twitch.tv/helix/streams?top=10')]
+
+Promise.all(arrayOfSearch).then(console.log(arrayOfSearch));
+
 }); 
 
 function fetchData(url) {
 	var headers = {
         'Client-ID': 'ijvkrnnrg0v6xnph3mns3hoyn2ltnz',
+        'Accept': 'application/vnd.twitchtv.v5+json' 
 	};
 	return axios.get(url, {
 		headers
@@ -52,6 +53,8 @@ function fetchData(url) {
 
 
 // for multiple URL searches
+/*
 const arrayOfSearch = [fetchData('https://api.twitch.tv/helix/games?id=493057'), fetchData('https://api.twitch.tv/helix/streams?top=10')]
 
 Promise.all(arrayOfSearch).then(console.log(arrayOfSearch));
+*/
