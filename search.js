@@ -76,7 +76,7 @@ document.getElementById('search').addEventListener('submit', function (e) {
             // games = response.data.Search
             // console.log(response.data);
         })
-    // gamesContainer.innerHTML = renderSearch(gamesData); 
+    // gamesContainer.innerHTML = renderSearch(gamesData);  
 })
 
 
