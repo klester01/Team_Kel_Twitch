@@ -54,9 +54,9 @@ document.addEventListener('DOMContentLoaded', function() {
 // console.log(test); 
 
 // for multiple URL searches
-// const arrayOfSearch = [fetchData('https://api.twitch.tv/helix/games?id=493057'), fetchData('https://api.twitch.tv/helix/streams?top=10')]
+const arrayOfSearch = [fetchData('https://api.twitch.tv/helix/games?id=493057'), fetchData('https://api.twitch.tv/helix/streams?top=10')]
 
-// Promise.all(arrayOfSearch).then(console.log(arrayOfSearch));
+Promise.all(arrayOfSearch).then(console.log(arrayOfSearch));
 
 
 // var gamesContainer = document.getElementById("searchContainer"); 
@@ -67,7 +67,7 @@ document.getElementById('search').addEventListener('submit', function(e){
         var urlEncodedSearchString = encodeURIComponent(searchString); 
         console.log(searchString)
 
-        axios.get(`https://api.twitch.tv/kraken/search/games?query=${urlEncodedSearchString}`, headersSearch)
+        axios.get(`https://api.twitch.tv/kraken/search/games?query=${urlEncodedSearchString}`, {headers})
             .then(function(response) {
                 console.log(response)
                 // var searchHTML = renderSearch(response.data.Search);
@@ -79,7 +79,7 @@ document.getElementById('search').addEventListener('submit', function(e){
    }) 
 
 
-var headersSearch = {
+var headers = {
     'Accept': 'application/vnd.twitchtv.v5+json',
     'Client-ID': '8h3jv4wh2mbm329j2q50djovs9w00v'  
 };
