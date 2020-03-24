@@ -84,4 +84,3 @@ var headers = {
 // const arrayOfSearch = [fetchData('https://api.twitch.tv/helix/games?id=493057'), fetchData('https://api.twitch.tv/helix/streams?top=10')]
 
 // Promise.all(arrayOfSearch).then(console.log(arrayOfSearch));
-
