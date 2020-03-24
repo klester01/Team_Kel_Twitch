@@ -1,9 +1,9 @@
-
-
-#container {
+html {
     background-color: black;
-    max-height: 600px;
-    margin: auto;
+}
+
+body {
+    background-color: black;
 }
 
 h5 {
@@ -18,8 +18,10 @@ h2 {
     font-weight: bold;
 }
 
-.card {
-	background-color: rgba(255, 255, 255, .8);
+#container {
+    background-color: black;
+    max-height: 600px;
+    margin: auto;
 }
 
 #gameImg {
@@ -32,22 +34,19 @@ h2 {
     height: 50px;
 }
 
-html {
-    background-color: black;
-}
-
-body {
-    background-color: black;
-}
-
 #footerText {
     color: grey;
     font-size: 12px;
 }
+
 #title {
     text-align:center;
     color: #410093;
 }
+.card {
+	background-color: rgba(255, 255, 255, .8);
+}
+
 .blink {
     -webkit-animation: blink 1.50s linear infinite;
     -moz-animation: blink 1.50s linear infinite;
@@ -87,4 +86,26 @@ body {
     100% { opacity: 0; }
 }
 
+@media (min-width: 576px) {
+    .card-columns {
+        column-count: 2;
+    }
+}
 
+@media (min-width: 768px) {
+    .card-columns {
+        column-count: 3;
+    }
+}
+
+@media (min-width: 992px) {
+    .card-columns {
+        column-count: 4;
+    }
+}
+
+@media (min-width: 1200px) {
+    .card-columns {
+        column-count: 5;
+    }
+}

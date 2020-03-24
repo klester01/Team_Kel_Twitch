@@ -1,5 +1,6 @@
 var games;
 
+<<<<<<< HEAD
     function renderSearch(searchArray) {
             console.log(searchArray)
         var searchHTML = searchArray.map(currentGame => {
@@ -19,6 +20,22 @@ var games;
         });
         return searchHTML.join("");
     };
+=======
+function renderSearch(gameInfo) {
+    console.log(gameInfo); 
+    let renderGame = gameInfo.map(topGame => {
+        return`
+            <div class="card mx-2 my-3 col-lg-2 col-md-3 col-sm-4">
+                <div class="card-body">
+                    <h5 id="gameName" class="card-title d-flex flex-column text-center">${topGame.name}</h5>
+                    <img id="gameImg" class="card-img-top" src="${topGame.box.large}" alt="...">
+                </div>
+            </div>
+        `
+    })
+    return renderGame.join('');
+};
+>>>>>>> master
 
 
 document.getElementById('search').addEventListener('submit', function (e) {
@@ -29,8 +46,13 @@ document.getElementById('search').addEventListener('submit', function (e) {
         axios.get(`https://api.twitch.tv/kraken/search/games?query=${urlEncodedSearchString}`, {headers})
             .then(function(response) {
                 var gamesContainer = document.getElementById("searchContainer");
+<<<<<<< HEAD
                 gamesContainer.innerHTML = renderSearch(response.data); 
                 console.log(response.data)
+=======
+                gamesContainer.innerHTML = renderSearch(response.data.games); 
+                //console.log(response.data)
+>>>>>>> master
                 // var searchHTML = renderSearch(response);
                 // gamesContainer.innerHTML = searchHTML;
                 //games = response.data
@@ -88,5 +110,9 @@ var headers = {
 // for multiple URL searches
 // const arrayOfSearch = [fetchData('https://api.twitch.tv/helix/games?id=493057'), fetchData('https://api.twitch.tv/helix/streams?top=10')]
 
+<<<<<<< HEAD
 // Promise.all(arrayOfSearch).then(console.log(arrayOfSearch));
 
+=======
+// Promise.all(arrayOfSearch).then(console.log(arrayOfSearch));
+>>>>>>> master
