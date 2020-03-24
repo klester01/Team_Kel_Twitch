@@ -18,7 +18,7 @@ function renderGames(gameInfo) {
                     <h5 id="gameName" class="card-title d-flex flex-column text-center">${topGame.game.name}</h5>
                     <img id="gameImg" class="card-img-top" src="${topGame.game.box.large}" alt="...">
                     <span id="gameViewers" class="date badge badge-danger">${topGame.viewers} watching</span> 
-                    <span id="gameViewers" class="date badge badge-dark">${topGame.channels} streaming</span>
+                    <span id="gameChannels" class="date badge badge-dark">${topGame.channels} streaming</span>
                     <a href="https://www.twitch.tv/search?term=${topGame.game.name}" target="_blank id="gamerProfile" class="stretched-link">More on Twitch</a>
                 </div>
             </div>
