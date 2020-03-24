@@ -31,7 +31,7 @@ function renderGames(gameInfo) {
 axios.get('https://api.twitch.tv/kraken/games/top', {headers}) 
 .then(function (response) {
     document.getElementById('gameCard').innerHTML = renderGames(response);
-    // console.log(response.data); 
+     console.log(response.data); 
     // console.log(response.data.top[0].game.name); 
 })
 
