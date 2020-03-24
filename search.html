@@ -22,7 +22,7 @@
               <a class="nav-link" href="/index.html">Home</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/search.html">Link</a>
+              <a class="nav-link" href="/search.html">Search for Games</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
@@ -35,6 +35,11 @@
         </div>
       </nav>
     <div id="searchContainer">
+        <div class="ml-5">
+          <div id="gameCard" class="row mx-auto">
+              <!-- Individual searches go here -->
+          </div>
+        </div>
         <!--This will hold the searches we want to display-->
     </div>
     <div id="footer">
@@ -47,6 +52,6 @@
     <!-- These are the Axios Scripts -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!--I put the script pages at the bottom so they run correctly-->
-    <script src="search.js"></script>
+    <script defer src="search.js"></script>
 </body>
 </html>

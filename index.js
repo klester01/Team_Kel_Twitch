@@ -52,7 +52,7 @@ document.getElementById('searchBar').addEventListener('submit', function(e){
     // gamesContainer.innerHTML = renderSearch(gamesData); 
    }) 
 
- axios.get('https://api.twitch.tv/kraken/search/channels?query=starcraft', {headers})
+ axios.get('https://api.twitch.tv/kraken/search/games?query=${urlEncodedSearchString}', {headers})
         .then(function(response) {
             console.log(response);
 })
