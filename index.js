@@ -1,6 +1,7 @@
 const headers = {
     'Accept': 'application/vnd.twitchtv.v5+json',
-    'Client-ID': '8h3jv4wh2mbm329j2q50djovs9w00v'
+    'Client-ID': '8h3jv4wh2mbm329j2q50djovs9w00v',
+    // 'Authorization': 'Bearer'+theToken 
 };
 
 // Populate the container with the top 10 streams. For some reason, they are coming in vertically and not horizontally.
@@ -35,23 +36,23 @@ axios.get('https://api.twitch.tv/kraken/games/top', {headers})
     // console.log(response.data.top[0].game.name); 
 })
 
-// Experimental function to bring in the bottom-10 streamers by viewers. This needs to be done recursively; e.g., continue running
+//  Function to bring in the bottom-10 streamers by viewers. This needs to be done recursively; e.g., continue running
 // and passing in a new pageKey value each run until there's no more streams to return.
 
-// Experimental function 1: need to figure out how to pass in the headers for each loop. It doesn't seem to pass in the headers the second time around.
-function getAllStreams (cursor, data = []) {
-    return axios.get('https://api.twitch.tv/helix/streams?first=100' + (cursor ? '?after='+cursor : ''), {headers})
-      .then(response => {
-          console.log(response.data)
-          if (response.data.length < 1 ) return data
-          data.push(...response.data.data)
-          console.log(data);
-          return getAllStreams(response.data.pagination.cursor, data)
-      })
-}
+// Experimental function 1: This works but is rate-limited. Trying to pass in access token to override this issue.
+// function getAllStreams (cursor, data = []) {
+//     return axios.get('https://api.twitch.tv/helix/streams' + (`?first=100` ? '?after='+cursor : ''), {headers})
+//       .then(response => {
+//         //   console.log(response.data) 
+//           if (response.data.length < 1 ) return data
+//           data.push(...response.data.data)
+//           console.log(data);
+//           return getAllStreams(response.data.pagination.cursor, data)
+//       })
+// }
 
-getAllStreams()
-.then(data => console.log("final data", data)); 
+// getAllStreams()
+// .then(data => console.log("final data", data)); 
 
 // Experimental function 2: will scrape through API when hard-coded (this takes you to page 2)
 // axios.get('https://api.twitch.tv/helix/streams?first=100', {headers}) 
@@ -67,21 +68,12 @@ getAllStreams()
 //         })
 // })
 
-// This function works and will create an access token.
-// document.getElementById("test").addEventListener("click", function(){
+// This function works and will create an access token. How do I save and return this so I can access it outside of the function?
 //     axios.post(
-//         'https://id.twitch.tv/oauth2/token?client_id=8h3jv4wh2mbm329j2q50djovs9w00v&client_secret=j051tnz5ka2kjjgcuhox8k04pdfu1w&grant_type=client_credentials')
-//         // {
-//         // client_id: '8h3jv4wh2mbm329j2q50djovs9w00v',
-//         // client_secret: 'j051tnz5ka2kjjgcuhox8k04pdfu1w',
-//         // redirect_uri: 'http://localhost',
-//         // grant_type: 'client_credentials'
-//         // }
-//         .then((response) => {
-//             console.log(response.data.access_token);
-//         }
-//     );
+//         'https://id.twitch.tv/oauth2/token?client_id=8h3jv4wh2mbm329j2q50djovs9w00v&client_secret=j051tnz5ka2kjjgcuhox8k04pdfu1w&grant_type=client_credentials').then(response => {
+//             theToken = response.data.access_token;
 // })
+
 
 // Attempt at flex cards 1
 // function renderGames(gameInfo) {
