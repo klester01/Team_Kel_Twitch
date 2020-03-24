@@ -6,7 +6,7 @@
     <title>Get Twitchin'</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="index.css">
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!--I put the script pages at the bottom so they run correctly-->
 </head>
 <body>
@@ -27,7 +27,7 @@
                   <a class="nav-link" href="/index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/search.html">SEARCH</a>
+                  <a class="nav-link" href="/search.html">Search</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
@@ -109,5 +109,7 @@
         <!-- These are the Axios Scripts -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!--I put the script pages at the bottom so they run correctly-->
-    <script src="search.js"></script>
-    <script src="index.js"></script>
+    <script defer src="index.js"></script>
+    <script defer src="search.js"></script>
+</body>    
+</html>

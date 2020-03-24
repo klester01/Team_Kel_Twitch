@@ -15,9 +15,10 @@ function renderGames(gameInfo) {
             <div class="card mx-2 my-3 col-lg-2 col-md-3 col-sm-4">
                 <div class="card-body">
                     <h5 id="gameName" class="card-title d-flex flex-column text-center">${topGame.game.name}</h5>
-                    <img id="gameImg" class="card-img-top" src="${topGame.game.box.medium}" alt="...">
+                    <img id="gameImg" class="card-img-top" src="${topGame.game.box.large}" alt="...">
                     <span id="gameViewers" class="date badge badge-danger">${topGame.viewers} watching</span> 
                     <span id="gameViewers" class="date badge badge-dark">${topGame.channels} streaming</span>
+                    <a href="https://www.twitch.tv/search?term=${topGame.game.name}" target="_blank id="gamerProfile" class="stretched-link">More on Twitch</a>
                 </div>
             </div>
         `
@@ -30,7 +31,7 @@ function renderGames(gameInfo) {
 axios.get('https://api.twitch.tv/kraken/games/top', {headers}) 
 .then(function (response) {
     document.getElementById('gameCard').innerHTML = renderGames(response);
-    // console.log(response.data); 
+     console.log(response.data); 
     // console.log(response.data.top[0].game.name); 
 })
 
@@ -51,7 +52,7 @@ document.getElementById('searchBar').addEventListener('submit', function(e){
     // gamesContainer.innerHTML = renderSearch(gamesData); 
    }) 
 
- axios.get('https://api.twitch.tv/kraken/search/channels?query=starcraft', {headers})
+ axios.get('https://api.twitch.tv/kraken/search/games?query=${urlEncodedSearchString}', {headers})
         .then(function(response) {
             console.log(response);
 })

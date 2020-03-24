@@ -1,25 +1,52 @@
 var games;
-document.addEventListener('DOMContentLoaded', function() { 
-   
-    function renderSearch (twitchArray){
-       var searchHTML = twitchArray.map(function (currentGame){
-            return`
-            <div id="container" class="mx-auto d-flex card-deck">
-                <div class="card mx-2 my-5">
-                     <img id="gamerImg" class="card-img-top" src="https://www.net-aware.org.uk/siteassets/images-and-icons/application-icons/app-icons-twitch.png?w=585&scale=down">
-                        <div class="card-body d-flex flex-column">
-                            <h5 id="gamerUsername" class="card-title d-flex flex-column">${currentGame.user_name}</h5>
-                            <span id="gamerViews" class="date badge badge-dark">${currentGame.viewer_count}</span>
-                            <span id="gamerDescription">${currentGame.description}</span>
-                            <a href="https://www.twitch.tv/" id="gamerProfile" class="stretched-link">${currentGame.Go-to-Profile}</a>
-                        </div>
-                 </div>
-            </div>`
-       }).join(""); 
-       return searchHTML; 
-    };});
-    
-    
+
+function renderSearch(gameInfo) {
+    console.log(gameInfo); 
+    let renderGame = gameInfo.map(topGame => {
+        return`
+            <div class="card mx-2 my-3 col-lg-2 col-md-3 col-sm-4">
+                <div class="card-body">
+                    <h5 id="gameName" class="card-title d-flex flex-column text-center">${topGame.name}</h5>
+                    <img id="gameImg" class="card-img-top" src="${topGame.box.large}" alt="...">
+                </div>
+            </div>
+        `
+    })
+    return renderGame.join('');
+};
+
+
+document.getElementById('search').addEventListener('submit', function (e) {
+    e.preventDefault();
+        var searchString = e.target.elements[0].value;
+        var urlEncodedSearchString = encodeURIComponent(searchString); 
+        console.log(searchString)
+        axios.get(`https://api.twitch.tv/kraken/search/games?query=${urlEncodedSearchString}`, {headers})
+            .then(function(response) {
+                var gamesContainer = document.getElementById("searchContainer");
+                gamesContainer.innerHTML = renderSearch(response.data.games); 
+                //console.log(response.data)
+                // var searchHTML = renderSearch(response);
+                // gamesContainer.innerHTML = searchHTML;
+                //games = response.data
+                // console.log(games);
+        })
+    // gamesContainer.innerHTML = renderSearch(games);  
+})
+
+
+var headers = {
+    'Accept': 'application/vnd.twitchtv.v5+json',
+    'Client-ID': '8h3jv4wh2mbm329j2q50djovs9w00v'
+};
+
+//  axios.get('https://api.twitch.tv/kraken/search/channels?query=starcraft', {headersSearch})
+//         .then(function(response) {
+//             console.log(response);
+// })
+
+
+
 
 //     var gamesContainer = document.getElementById("searchContainer");
 //     document.getElementById('searchBar').addEventListener('submit', function(e){
@@ -37,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // }); 
 
- 
+
 // })
 // function fetchData(url) {
 // 	var headers = {
@@ -54,37 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // console.log(test); 
 
 // for multiple URL searches
-const arrayOfSearch = [fetchData('https://api.twitch.tv/helix/games?id=493057'), fetchData('https://api.twitch.tv/helix/streams?top=10')]
+// const arrayOfSearch = [fetchData('https://api.twitch.tv/helix/games?id=493057'), fetchData('https://api.twitch.tv/helix/streams?top=10')]
 
-Promise.all(arrayOfSearch).then(console.log(arrayOfSearch));
+// Promise.all(arrayOfSearch).then(console.log(arrayOfSearch));
 
-
-// var gamesContainer = document.getElementById("searchContainer"); 
-document.getElementById('search').addEventListener('submit', function(e){
-    e.preventDefault();
-    console.log("line 71");
-        var searchString = e.target.elements[0].value;
-        var urlEncodedSearchString = encodeURIComponent(searchString); 
-        console.log(searchString)
-
-        axios.get(`https://api.twitch.tv/kraken/search/games?query=${urlEncodedSearchString}`, {headers})
-            .then(function(response) {
-                console.log(response)
-                // var searchHTML = renderSearch(response.data.Search);
-                // gamesContainer.innerHTML = searchHTML;
-                // games = response.data.Search
-                // console.log(response.data);
-        })
-    // gamesContainer.innerHTML = renderSearch(gamesData); 
-   }) 
-
-
-var headers = {
-    'Accept': 'application/vnd.twitchtv.v5+json',
-    'Client-ID': '8h3jv4wh2mbm329j2q50djovs9w00v'  
-};
-
-//  axios.get('https://api.twitch.tv/kraken/search/channels?query=starcraft', {headersSearch})
-//         .then(function(response) {
-//             console.log(response);
-// })
