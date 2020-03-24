@@ -1,26 +1,5 @@
 var games;
 
-<<<<<<< HEAD
-    function renderSearch(searchArray) {
-            console.log(searchArray)
-        var searchHTML = searchArray.map(currentGame => {
-            console.log(searchArray)
-            return `
-            <div id="container" class="mx-auto d-flex card-deck">
-                <div class="card mx-2 my-5">
-                     <img id="gamerImg" class="card-img-top" src="https://www.net-aware.org.uk/siteassets/images-and-icons/application-icons/app-icons-twitch.png?w=585&scale=down">
-                        <div class="card-body d-flex flex-column">
-                            <h5 id="gamerUsername" class="card-title d-flex flex-column">${currentGame.name}</h5>
-                            <span id="gamerViews" class="date badge badge-dark">${currentGame.viewer_count}</span>
-                            <span id="gamerDescription">${currentGame.description}</span>
-                            <a href="https://www.twitch.tv/" id="gamerProfile" class="stretched-link">${currentGame.Go - to - Profile}</a>
-                        </div>
-                 </div>
-            </div>`
-        });
-        return searchHTML.join("");
-    };
-=======
 function renderSearch(gameInfo) {
     console.log(gameInfo); 
     let renderGame = gameInfo.map(topGame => {
@@ -35,7 +14,6 @@ function renderSearch(gameInfo) {
     })
     return renderGame.join('');
 };
->>>>>>> master
 
 
 document.getElementById('search').addEventListener('submit', function (e) {
@@ -46,13 +24,8 @@ document.getElementById('search').addEventListener('submit', function (e) {
         axios.get(`https://api.twitch.tv/kraken/search/games?query=${urlEncodedSearchString}`, {headers})
             .then(function(response) {
                 var gamesContainer = document.getElementById("searchContainer");
-<<<<<<< HEAD
-                gamesContainer.innerHTML = renderSearch(response.data); 
-                console.log(response.data)
-=======
                 gamesContainer.innerHTML = renderSearch(response.data.games); 
                 //console.log(response.data)
->>>>>>> master
                 // var searchHTML = renderSearch(response);
                 // gamesContainer.innerHTML = searchHTML;
                 //games = response.data
@@ -110,9 +83,4 @@ var headers = {
 // for multiple URL searches
 // const arrayOfSearch = [fetchData('https://api.twitch.tv/helix/games?id=493057'), fetchData('https://api.twitch.tv/helix/streams?top=10')]
 
-<<<<<<< HEAD
 // Promise.all(arrayOfSearch).then(console.log(arrayOfSearch));
-
-=======
-// Promise.all(arrayOfSearch).then(console.log(arrayOfSearch));
->>>>>>> master
