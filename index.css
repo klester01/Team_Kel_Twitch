@@ -24,6 +24,12 @@ h2 {
     margin: auto;
 }
 
+#searchContainer {
+    display: flex;
+	flex-direction: row;
+	flex-flow: wrap;
+}
+
 #gameImg {
     max-width: 200px;
     margin: auto;
