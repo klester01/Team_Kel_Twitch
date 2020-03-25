@@ -1,8 +1,4 @@
-html {
-    background-color: black;
-}
-
-body {
+html body {
     background-color: black;
 }
 
@@ -12,9 +8,20 @@ h5 {
 }
 
 h2 {
-    font-size: 20px;
-    color: green;
+    font-size: 18px;
+    color: #0FA0AE;
     margin: 5px 0 0 20px;
+    font-weight: bold;
+}
+
+#gameSearch {
+    padding: 20px;
+}
+
+#gameText {
+    font-size: 18px;
+    color: #0FA0AE;
+    margin: 5px 0 10px 0;
     font-weight: bold;
 }
 
@@ -22,6 +29,12 @@ h2 {
     background-color: black;
     max-height: 600px;
     margin: auto;
+}
+
+#searchContainer {
+    display: flex;
+	flex-direction: row;
+	flex-flow: wrap;
 }
 
 #gameImg {

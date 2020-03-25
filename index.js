@@ -4,6 +4,7 @@ const headers = {
 };
 
 // Populate the container with the top 10 streams.
+
 function renderGames(gameInfo) {
     let renderInfo = gameInfo.data.top.map(topGame => {
         return`
@@ -150,3 +151,7 @@ axios.get('https://api.twitch.tv/kraken/streams/featured?limit=20', {headers})
 //       <!-- Top-10 games go here -->
 //   </div>
 // </div>
+=======
+     console.log(response.data); 
+    // console.log(response.data.top[0].game.name); 
+})
