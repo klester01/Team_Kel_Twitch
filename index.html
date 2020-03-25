@@ -15,7 +15,7 @@
       
    <!--Below is for the navagation and search bar--> 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Twitch Lyfe</a>
+            <a class="navbar-brand" href="/index.html">Twitch Lyfe</a>
                <!--Everything is a placeholder for now so don't worry-->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -27,54 +27,36 @@
                   <a class="nav-link" href="/index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/search.html">SEARCH</a>
+                  <a class="nav-link" href="/games.html">Search for Games</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="#">Random Streamer Generator</a>
                 </li>
               </ul>
-              <form id="search" class="form-inline my-2 my-lg-0" >
-                <input id="searchBar" class="form-control mr-sm-2" type="search" placeholder="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form>
             </div>
           </nav>
-<!--This will hold the top 10 users we want to display-->
-<!--TESTING OUT OPTIONS, BELOW IS CAROUSEL, NOT FINAL-->
+<!--Carousel of Gamer images-->
         <div id="carouselContainer" class="col col-md-10 offset-md-1 col-lg-7 offset-lg-2">
-          <!-- <div id="testData"></div> -->
             <div id="mainCarousel" class="carousel slide bg-dark mx-auto" data-ride="carousel">
                 <ol class="carousel-indicators">
                   <li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
                   <li data-target="#mainCarousel" data-slide-to="1"></li>
                   <li data-target="#mainCarousel" data-slide-to="2"></li>
+                  <li data-target="#mainCarousel" data-slide-to="3"></li>
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-      <!-- Placeholder for testing video -->
-                        <!-- <div class="embed-responsive embed-responsive-16by9">
-                          <iframe class="embed-responsive-item" src="https://youtu.be/u8IsIboxCRs" allowfullscreen></iframe>
-                      </div> -->
-                        <img class="img d-block w-100" src="https://cdn.shopify.com/s/files/1/0095/4332/files/Screen_Shot_2018-02-21_at_10.43.11_AM_1024x1024.png?v=1519258577" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                          <h5>...</h5>
-                          <p>...</p>
-                        </div>
+                        <img class="img d-block w-100" src="img/sean-do-EHLd2utEf68-unsplash.jpg" alt="...">
                       </div>
                       <div class="carousel-item">
-                        <img class="d-block w-100" src="https://i.insider.com/5b746ef5959f34212e8b4f17?width=750&format=jpeg&auto=webp" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                          <h5>...</h5>
-                          <p>...</p>
-                        </div>
+                        <img class="d-block w-100" src="img/jeshoots-com-eCktzGjC-iU-unsplash.jpg" alt="...">
                     </div>
                       <div class="carousel-item">
-                        <img class="d-block w-100" src="https://www.theloadout.com/wp-content/uploads/2019/09/ninja-streamer-red-bull-austria-900x506.jpeg" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                          <h5>...</h5>
-                          <p>...</p>
+                        <img class="d-block w-100" src="img/screen-post-hIXmJH9xhoo-unsplash.jpg" alt="...">
                       </div>
-                      </div>
+                      <div class="carousel-item">
+                        <img class="d-block w-100" src="img/alexey-savchenko-k4Akpt5-Sfk-unsplash.jpg" alt="...">
+                    </div>
                     </div>
                 <a class="carousel-control-prev" href="#mainCarousel" role="button" data-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="false"></span>
@@ -86,7 +68,13 @@
                 </a>
               </div>
         </div>
-<!--TESTING OUT OPTIONS, BELOW IS CARDS, NOT FINAL--> 
+  <div class="container-fluid mx-auto">
+          <h2 class="text-center">Current Top Streams</h2>
+          <div id="topRandomGame" class="row">
+            <!-- Top random game goes here -->
+          </div>
+        </div>
+<!--Top 10 Games on Twitch--> 
 <hr>
 
 <div id ="container">
@@ -99,7 +87,7 @@
 </div>
 
 <div id="container">
-  <h2 class="text-center">Top Games Today:</h2>
+  <h2 class="text-center">Top Games Streaming on Twitch Today:</h2>
     <div class="ml-5">
         <div id="gameCard" class="row mx-auto">
               <!-- Individual games go here -->
@@ -120,5 +108,6 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!--I put the script pages at the bottom so they run correctly-->
     <script defer src="index.js"></script>
-    <script defer src="search.js"></script>
-    
+</body>
+</html>
+
