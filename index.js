@@ -5,6 +5,39 @@ const headers = {
     'Client-ID': '8h3jv4wh2mbm329j2q50djovs9w00v'
 };
 
+///Populate container with video clips    
+
+// function renderVideos(videos){
+//     return`
+//     <div class="card mx-2 my-3 col-lg-2 col-md-3 col-sm-4">
+//         <div class = "card-body">
+//         <h5 id="gameName" class="card-title d-flex flex-column text-center">${dataVods.title}</h5>
+//         </div>
+//     </div>
+//         `
+// }
+
+// function renderVideos(videoInfo) {
+//     // console.log(gameInfo); 
+//     let rendervideoInfo = videoInfo.data.data.vods.map(vodsTitle => {
+      
+//         return`
+//             <div class="card mx-2 my-3 col-lg-2 col-md-3 col-sm-4">
+//                 <div class="card-body">
+//                     <h5 id="videoName" class="card-title d-flex flex-column text-center">${vodsTitle.title}</h5>
+//                 </div>
+//             </div>
+//         `
+//     })
+//     return rendervideoInfo.join('');
+// };
+
+
+axios.get('https://api.twitch.tv/kraken/videos/to', {headers})
+        .then(function(response) {
+                console.log(response); 
+})
+
 // Populate the container with the top 10 streams. For some reason, they are coming in vertically and not horizontally.
 function renderGames(gameInfo) {
     // console.log(gameInfo); 
@@ -25,8 +58,6 @@ function renderGames(gameInfo) {
     })
     return renderInfo.join('');
 };
-
-
 // Main function to bring in the top-10 games object.
 axios.get('https://api.twitch.tv/kraken/games/top', {headers}) 
 .then(function (response) {
