@@ -3,7 +3,7 @@ const headers = {
     'Client-ID': '8h3jv4wh2mbm329j2q50djovs9w00v'
 };
 
-// Populate the container with the top 10 streams. For some reason, they are coming in vertically and not horizontally.
+// Populate the container with the top 10 streams. 
 function renderGames(gameInfo) {
     let renderInfo = gameInfo.data.top.map(topGame => {
         return `
