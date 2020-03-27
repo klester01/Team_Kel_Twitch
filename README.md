@@ -1,5 +1,7 @@
-# Team_Kel_Twitch
-Team Project
+# TWITCH LYFE
+
+## Description 
+Users can search 
 
 # SCRUM Meetings:
 During the daily scrum, each team member answers the following three questions:
