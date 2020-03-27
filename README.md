@@ -11,14 +11,15 @@ Site visitors can see the top 3 random streamers on the home page when the page 
 ### Dev Notes
 ### Credits
 
-## Requirements
-Twitch Authentication Instructions: https://dev.twitch.tv/docs/authentication
+## Requirements: 
+### Twitch Authentication Instructions: https://dev.twitch.tv/docs/authentication
+Registering your app: client secret and client ID
 
-### Registering your app: client secret and client ID
-### Getting a token: application token
-### Sending the token: in your API request
-### Non-Interactive Inline Frames for Live Streams and VODs:
+Getting a token: application token
 
+Sending the token: in your API request
+
+Non-Interactive Inline Frames for Live Streams and VODs:
 #### <iframe
 #### src="https://player.twitch.tv/?<channel, video, or collection>&parent=streamernews.example.com"
 #### height="<height>"
@@ -35,24 +36,31 @@ Twitch Authentication Instructions: https://dev.twitch.tv/docs/authentication
 | IGDB                  | Game names, release dates and genre                              |
 
 
-## Project Notes
+## Project Notes:
 We decided to use Twitch's Non-Interactive Inline Frames for Live Streams and VODs instead of a third party library for better system performance and stability.
 
-## Dev Notes
-### .gitignore: used to exclude specific packages from being uploaded into github
-### clips.js : renders video clips 
-### games.js : render games, release dates and genre
-### index.js : renders top games being streamed and top 3 random streamers
-### CSS styling file : index.css
-### Bootstrap : 
+## Dev Notes: NOTE: All development was done remotely via Zoom Meeting & Live Server due to covid-19 pandemic
+| File Name:             |File Data:                                                                 |
+|-----------------------|:--------------------------------------------------------------------------:|
+| .gitignore            | used to exclude specific packages from being uploaded into github          |
+| clips.js              | code used to render video clips                                            |
+| games.js              | code used to search & render games, release dates and genre in search bar  |
+| index.js              | code used to render top games being streamed and top 3 random streamers    |
+| clips.html            | video main page                                                            |
+| games.html            | search main page                                                           |
+| index.html            | home main page                                                             |
+| index.css             | used to style the index.html, games.html and clips.htlm pages              |
+| /img                  | images for carousel                                                        |
+| index.html            | home main page                                                             |
 
-#### <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+Bootstrap: 
+ `<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>`
 
-#### <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+`<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>`
 
-#### <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+`<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>`
 
-## Credits
+## Credits:
 Build and designed by:
 
 Aaron Hedge
