@@ -31,6 +31,10 @@ h2 {
     margin: auto;
 }
 
+#carouselContainer {
+    justify-content: space-around;
+}
+
 #searchContainer {
     display: flex;
 	flex-direction: row;
