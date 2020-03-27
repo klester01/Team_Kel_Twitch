@@ -13,14 +13,8 @@ Site visitors can see the top 3 random streamers on the home page when the page 
 
 ## Requirements: 
 ### Twitch Authentication Instructions: https://dev.twitch.tv/docs/authentication
-Register your app: 
-    client secret and client ID
-
-Get a token: 
-    application token
-
-Include token: 
-    in your API request
+Use the link above to register your app to get: 
+    `client secret ID, client ID & application token`
 
 Non-Interactive Inline Frames for Live Streams and VODs:
   #### <iframe
