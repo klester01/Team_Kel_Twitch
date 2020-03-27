@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Twitchin'</title>
+    <title>Twitch Lyfe</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="index.css">
     <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -11,7 +11,7 @@
 </head>
 <body>
    <!--Below is for the blinking header with site name above the nav and search bar. NOT FINAL. I would like to make it scrolla across header of page--> 
-      <h1 id="title" class="tab blink"> X-STREAMERS </h1>
+      <h1 id="title" class="tab blink"> Twitch Lyfe </h1>
       
    <!--Below is for the navagation and search bar--> 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -29,9 +29,6 @@
                 <li class="nav-item">
                   <a class="nav-link" href="/games.html">Search for Games</a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="#">Random Streamer Generator</a>
-                </li> -->
                 <li class="nav-item">
                   <a class="nav-link" href="clips.html">Clips of The Day</a>
               </li>
@@ -39,7 +36,7 @@
             </div>
           </nav>
 <!--Carousel of Gamer images-->
-        <div id="carouselContainer" class="col col-md-10 offset-md-1 col-lg-7 offset-lg-2">
+        <div id="carouselContainer" class="col col-md-10 col-lg-7 mx-auto my-3">
             <div id="mainCarousel" class="carousel slide bg-dark mx-auto" data-ride="carousel">
                 <ol class="carousel-indicators">
                   <li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
@@ -72,17 +69,18 @@
               </div>
         </div>
   <div class="container-fluid mx-auto">
-          <h2 class="text-center">Current Top Streams</h2>
-          <div id="topRandomGame" class="row">
-            <!-- Top random game goes here -->
+          <h2 class="text-center mx-4">Random 3 Top Streamers</h2>
+          <p id="randomP">This refreshes with a new 3 every time the page loads!</p>
+          <div id="topRandomGame" class="row mx-auto justify-content-between">
+            <!-- Top random game goes here --> 
           </div>
         </div>
 <!--Top 10 Games on Twitch--> 
 <hr>
 <div id="container">
   <h2 class="text-center">Top Games Streaming on Twitch Today:</h2>
-    <div class="ml-5">
-        <div id="gameCard" class="row mx-auto">
+    <div>
+        <div id="gameCard" class="row mx-auto justify-content-between">
               <!-- Individual games go here -->
           </div>
         </div>
@@ -103,4 +101,3 @@
     <script defer src="index.js"></script>
 </body>
 </html>
-
