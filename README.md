@@ -48,7 +48,7 @@ We decided to use Twitch's Non-Interactive Inline Frames for Live Streams and VO
 | index.html            | home main page                                                             |
 | index.css             | used to style the index.html, games.html and clips.htlm pages              |
 | /img                  | images for carousel                                                        |
-| index.html            | home main page                                                             |
+
 
 Bootstrap: 
  `<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>`
