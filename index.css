@@ -8,7 +8,7 @@ h5 {
 }
 
 h2 {
-    font-size: 18px;
+    font-size: 25px;
     color: #0FA0AE;
     margin: 5px 0 0 20px;
     font-weight: bold;
@@ -25,10 +25,26 @@ h2 {
     font-weight: bold;
 }
 
+#nullMessage {
+    margin: auto;
+    color: red;
+    font-style: italic;
+    font-size: 20px;
+}
+
+#randomP {
+    color: grey;
+    text-align: center;
+}
+
+#clipContainer{
+    position: relative;
+}
+
 #container {
     background-color: black;
-    max-height: 600px;
     margin: auto;
+    position: relative;
 }
 
 #carouselContainer {
@@ -38,7 +54,8 @@ h2 {
 #searchContainer {
     display: flex;
 	flex-direction: row;
-	flex-flow: wrap;
+    flex-flow: wrap;
+    position: relative;
 }
 
 #gameImg {
@@ -49,6 +66,10 @@ h2 {
 #footer {
     background-color: black;
     height: 50px;
+    position: absolute;
+    text-align: center;
+    width: 100vw;
+    bottom: auto;
 }
 
 #footerText {
@@ -58,7 +79,7 @@ h2 {
 
 #title {
     text-align:center;
-    color: #410093;
+    color: #0FA0AE;
 }
 .card {
 	background-color: rgba(255, 255, 255, .8);

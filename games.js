@@ -1,13 +1,11 @@
-
-
 function renderSearch(gameInfo) {
-    // console.log(gameInfo);
 
-    let renderGame = gameInfo.map(gameSearch => {
-      // Break down https://images.igdb.com/igdb/image/upload/t_{size}/{hash}.jpg
 
-       if(gameSearch.cover && gameSearch.genres && gameSearch.release_dates) {
-         return`
+  let renderGame = gameInfo.map(gameSearch => {
+
+
+    if (gameSearch.cover && gameSearch.genres && gameSearch.release_dates) {
+      return `
         <div class="card mb-3 mx-auto" style="max-width: 620px;">
         <div class="row no-gutters">
           <div class="col-md-4">
@@ -26,37 +24,29 @@ function renderSearch(gameInfo) {
         </div>
       </div>
         `}
-    })
-    return renderGame.join(''); 
+  })
+  return renderGame.join('');
 };
 
 
 document.getElementById('search').addEventListener('submit', function (e) {
-    e.preventDefault();
-        var searchString = e.target.elements[0].value;
-        var urlEncodedSearchString = encodeURIComponent(searchString); 
-        //console.log(searchString)
-        const proxyurl = "https://cors-anywhere.herokuapp.com/";
-        const url = `https://api-v3.igdb.com/games/?search=${urlEncodedSearchString}&fields=name,cover.*,genres.*,summary,url,platforms.*,rating,release_dates.*`;
-        //const url = `https://api-v3.igdb.com/games/?search=${urlEncodedSearchString}&fields=*`
-        
-      
-        // var searchResultArray = []
+  e.preventDefault();
+  var searchString = e.target.elements[0].value;
+  var urlEncodedSearchString = encodeURIComponent(searchString);
 
-        axios.get(proxyurl + url, {
-            headers: {
-                'user-key': 'c92db89655365d7cbdb65d19d947a5f9',
-                'Accept': 'application/json'
-            },
-          })
-         .then(function(response) {
-           console.log(response)
-            // console.log(response.data[0].cover.url)
-            
-            var gamesContainer = document.getElementById("searchContainer");
-            gamesContainer.innerHTML = renderSearch(response.data);
-            //   console.log(response.data.platforms)
-                  }); 
+  const proxyurl = "https://cors-anywhere.herokuapp.com/";
+  const url = `https://api-v3.igdb.com/games/?search=${urlEncodedSearchString}&fields=name,cover.*,genres.*,summary,url,platforms.*,rating,release_dates.*`;
 
-                      
-       });
+  axios.get(proxyurl + url, {
+    headers: {
+      'user-key': '27edc8b6b53d795ca7a2afed39475b9f',
+      'Accept': 'application/json'
+    },
+  })
+    .then(function (response) {
+
+      var gamesContainer = document.getElementById("searchContainer");
+      gamesContainer.innerHTML = renderSearch(response.data) || `<div id="nullMessage">Search not found, please try again using a game name, genre, or release date.</div>`;
+    });
+
+});
